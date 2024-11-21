@@ -1,8 +1,10 @@
 # Number guess game
 import random
 
+# Get an input and set it as end of range
 while True:
-    rang = input("Set a range by giving last number in which you guess\n")
+    print("------------------------")
+    rang = input("Enter a number: ")
     if rang.isdigit():
         rang = int(rang)
         if rang <= 0:
@@ -18,16 +20,21 @@ rand_num = random.randint(0, rang)
 guess = 0
 
 while True:
-    intake = input("Guess the number: ")
+    print("Guess the number b/w 0 to", rang, ": ")
+    intake = input("")
     guess += 1
+
+    # Check that intake is an int or not
     if intake.isdigit():
         intake = int(intake)
         if intake == rand_num:
             print("You guess the correct number.")
             break
+        elif intake <= rand_num:
+            print("Your guess is smaller than actual number.")
         else:
-            print("Wrong guess")
+            print("Your guess is bigger than actual number.")
     else:
         print("Please write a number")
 
-print("You guess the correct answer in ", guess, "guesses")
+print("You guess the correct answer in", guess, "guesses")
