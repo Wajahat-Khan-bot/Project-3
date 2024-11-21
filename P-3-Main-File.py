@@ -13,7 +13,7 @@ while True:
             break
     else:
         print("Please write a number")
-        continue
+
 
 rand_num = random.randint(0, rang)
 
